@@ -7,11 +7,9 @@ import spark.Response;
 import spark.Route;
 import spark.Spark;
 
-import java.io.IOException;
 import java.io.StringWriter;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -29,7 +27,7 @@ public class SparkFormHandling {
                 fruits.put("fruits", Arrays.asList("apple", "orange", "banana","peach"));
 
                 try {
-                    Template template = configuration.getTemplate("fruitPicker.ftl");
+                    Template template = configuration.getTemplate("freemarker/fruitPicker.ftl");
                     StringWriter writer = new StringWriter();
                     template.process(fruits, writer);
 
